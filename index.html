@@ -1,140 +1,101 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nitrogulserin | Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitroxxs Skämt</title>
+    <style>
+        /* Bakgrund med ett fint, mörkt himmelstema */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0b1026 0%, #162345 50%, #283a66 100%);
+            color: #f0f4f8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<style>
-@font-face {
-    font-family: "Cheese Moka";
-    src: url("CheeseMoka.woff2") format("woff2");
-}
+        /* Rubriken högst upp */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Cheese Moka", sans-serif;
-}
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(0, 150, 255, 0.5);
+            letter-spacing: 2px;
+        }
 
-body {
-    background: radial-gradient(circle at top, #2a0a3d, #0b0b10);
-    color: white;
-    overflow-x: hidden;
-}
+        /* Container för alla skämt */
+        .jokes-container {
+            max-width: 800px;
+            width: 90%;
+            margin-bottom: 50px;
+            display: grid;
+            gap: 20px;
+        }
 
-/* glow background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(168,85,247,0.15), transparent 60%);
-    animation: glow 6s infinite alternate;
-    z-index: -1;
-}
+        /* Hur varje skämt-ruta ser ut */
+        .joke-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, background 0.2s;
+        }
 
-@keyframes glow {
-    from { transform: scale(1); opacity: 0.5; }
-    to { transform: scale(1.2); opacity: 1; }
-}
+        .joke-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        .joke-number {
+            font-size: 0.85rem;
+            color: #8da2fb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
 
-.hero h1 {
-    font-size: 60px;
-    color: #c084fc;
-    text-shadow: 0 0 25px #a855f7;
-}
-
-.hero p {
-    margin-top: 10px;
-    font-size: 20px;
-    color: #ddd;
-}
-
-/* BUTTON */
-.btn {
-    margin-top: 25px;
-    padding: 15px 30px;
-    border-radius: 14px;
-    border: 1px solid #a855f7;
-    background: rgba(168,85,247,0.15);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #a855f7;
-}
-
-/* SECTION CARD */
-section {
-    max-width: 850px;
-    margin: 60px auto;
-    padding: 60px 25px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(168,85,247,0.2);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-}
-
-h2 {
-    font-size: 40px;
-    color: #c084fc;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px #a855f7;
-}
-
-p {
-    font-size: 18px;
-    color: #ddd;
-    line-height: 1.6;
-}
-</style>
-
+        .joke-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Hej, jag Nitrixxgulserin</h1>
-    <p>Mitt Discord-användarnamn är @Nitrixx</p>
+    <header>
+        <h1>Nitroxxs Skämt</h1>
+    </header>
 
-    <a href="https://www.merriam-webster.com/slang/rage-bait" target="_blank">
-        <button class="btn">Läs mer</button>
-    </a>
-</section>
+    <main class="jokes-container">
 
-<!-- RAGE BAIT -->
-<section>
-    <h2>Vad är rage bait</h2>
+        <div class="joke-card">
+            <div class="joke-number">Skämt #1</div>
+            <p class="joke-text">Varför är pingviner så dåliga på datorer? <br><strong>– För att de har koll på alla webb-sidor!</strong></p>
+        </div>
 
-    <p>
-        Rage bait är innehåll på internet som är gjort för att väcka starka känslor,
-        oftast ilska eller frustration. Det används för att få mer uppmärksamhet,
-        klick och engagemang på sociala medier.
-    </p>
+        <div class="joke-card">
+            <div class="joke-number">Skämt #2</div>
+            <p class="joke-text">Vad kallas en alligator som har svalt ett lexikon? <br><strong>– En ord-vitsare.</strong></p>
+        </div>
 
-    <p>
-        Det består ofta av inlägg som är medvetet överdrivna eller provocerande för
-        att få människor att reagera och diskutera.
-    </p>
-</section>
+        <div class="joke-card">
+            <div class="joke-number">Skämt #3</div>
+            <p class="joke-text">Varför är det så svårt att prata med en tidsresenär? <br><strong>– De blir alltid så dåtid-iga.</strong></p>
+        </div>
 
-</body>
-</html>
+        <div class="joke-card">
+... (38 lines left)
