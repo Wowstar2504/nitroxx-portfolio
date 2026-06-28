@@ -1,144 +1,328 @@
-<!DOCTYPE html>
+<!doctype html public "-//w3c//dtd html 4.01//en">
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Förstärkta Regionala Insatsstyrkan</title>
-
+<title>Nitroxx's skämt</title>
 <style>
-*{
+  :root{
+    --bg-white:#ffffff;
+    --bg-black:#0a0a0a;
+    --ink:#111111;
+    --c1:#ff4d6d; /* rosa-röd */
+    --c2:#ffd93d; /* gul */
+    --c3:#4dd9c0; /* turkos */
+    --c4:#8c6dff; /* lila */
+    --c5:#54c0ff; /* blå */
+    --line:#1a1a1a;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+    background:var(--bg-white);
+    color:var(--ink);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
 
-body{
-    background:#111;
-    color:white;
-    line-height:1.6;
-}
-
-header{
-    background:#0b3d2e;
-    padding:20px;
+  /* topp-sektion */
+  header{
+    background:var(--bg-white);
+    border-bottom:6px solid var(--bg-black);
+    padding:48px 20px 36px;
     text-align:center;
-}
+    position:relative;
+    overflow:hidden;
+  }
 
-header h1{
-    font-size:38px;
-}
+  header::before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    left:50%;
+    width:140%;
+    height:140px;
+    transform:translateX(-50%) rotate(-3deg);
+    background:linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c5), var(--c4));
+    opacity:0.85;
+  }
 
-nav{
-    background:#222;
-    display:flex;
+  h1{
+    position:relative;
+    font-size:clamp(2.2rem, 6vw, 4rem);
+    margin:0;
+    font-weight:900;
+    letter-spacing:-1px;
+    color:var(--bg-black);
+  }
+
+  h1 span{
+    display:inline-block;
+    background:var(--bg-black);
+    color:var(--bg-white);
+    padding:4px 14px;
+    transform:rotate(-2deg);
+    margin-left:6px;
+  }
+
+  .subtitle{
+    position:relative;
+    margin-top:14px;
+    font-size:1rem;
+    color:#444;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+
+  .counter-bar{
+    position:relative;
+    margin-top:18px;
+    display:inline-flex;
+    gap:6px;
+    flex-wrap:wrap;
     justify-content:center;
-}
+  }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    transition:0.3s;
-}
+  .counter-bar span{
+    font-size:0.75rem;
+    font-weight:700;
+    color:var(--bg-white);
+    background:var(--bg-black);
+    border-radius:999px;
+    padding:6px 14px;
+  }
 
-nav a:hover{
-    background:#0b3d2e;
-}
-
-.hero{
-    height:500px;
-    background:url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80") center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero h2{
-    background:rgba(0,0,0,0.6);
-    padding:20px 40px;
-    font-size:42px;
-}
-
-.container{
+  /* skämt-grid */
+  main{
+    padding:40px 16px 60px;
     max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
+    margin:0 auto;
+  }
 
-.card{
-    background:#1b1b1b;
-    padding:25px;
-    margin-bottom:25px;
-    border-left:5px solid #0b3d2e;
-    border-radius:8px;
-}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:18px;
+  }
 
-.card h3{
-    margin-bottom:10px;
-    color:#6cffb7;
-}
+  .joke{
+    background:var(--bg-white);
+    border:3px solid var(--bg-black);
+    border-radius:14px;
+    padding:20px 18px 18px;
+    position:relative;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    cursor:default;
+  }
 
-footer{
-    background:#0b3d2e;
+  .joke:hover{
+    transform:translateY(-4px) rotate(-0.5deg);
+    box-shadow:6px 6px 0 var(--bg-black);
+  }
+
+  .joke-number{
+    position:absolute;
+    top:-14px;
+    left:14px;
+    font-size:0.75rem;
+    font-weight:800;
+    color:var(--bg-white);
+    padding:4px 10px;
+    border-radius:999px;
+  }
+
+  .joke p{
+    margin:10px 0 0;
+    font-size:1rem;
+    line-height:1.45;
+  }
+
+  .joke p.setup{
+    font-weight:700;
+  }
+
+  .joke p.punch{
+    color:#333;
+    margin-top:6px;
+  }
+
+  /* färgrotation för korten (blandade färger) */
+  .joke:nth-child(5n+1) .joke-number{background:var(--c1);}
+  .joke:nth-child(5n+2) .joke-number{background:var(--c2); color:var(--bg-black);}
+  .joke:nth-child(5n+3) .joke-number{background:var(--c3); color:var(--bg-black);}
+  .joke:nth-child(5n+4) .joke-number{background:var(--c4);}
+  .joke:nth-child(5n+0) .joke-number{background:var(--c5); color:var(--bg-black);}
+
+  /* footer - helt svart, aldrig vit */
+  footer{
+    background:var(--bg-black);
+    color:#eaeaea;
+    padding:40px 20px 50px;
     text-align:center;
-    padding:20px;
-    margin-top:30px;
-}
-</style>
+    border-top:6px solid;
+    border-image:linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c5), var(--c4)) 1;
+  }
 
+  footer .foot-title{
+    font-size:1.3rem;
+    font-weight:900;
+    color:var(--bg-white);
+    margin-bottom:6px;
+  }
+
+  footer .version-tag{
+    display:inline-block;
+    margin-top:14px;
+    font-size:0.78rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--bg-black);
+    background:linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c5), var(--c4));
+    padding:6px 16px;
+    border-radius:999px;
+    font-weight:800;
+  }
+
+  footer .platforms{
+    margin-top:18px;
+    font-size:0.85rem;
+    color:#999;
+  }
+
+  /* responsivitet: mobil, dator, pc, playstation-webbläsare */
+  @media (max-width: 600px){
+    h1{font-size:2rem;}
+    .joke p{font-size:0.95rem;}
+    main{padding:30px 12px 50px;}
+  }
+
+  @media (min-width: 1400px){
+    main{max-width:1300px;}
+  }
+
+  /* fokus-synlighet för tangentbord/handkontroll-navigering (bra för PlayStation-webbläsare) */
+  .joke:focus-visible{
+    outline:4px solid var(--c4);
+    outline-offset:2px;
+  }
+
+  .joke{tabindex:0;}
+</style>
 </head>
 <body>
 
 <header>
-<h1>Förstärkta Regionala Insatsstyrkan</h1>
-<p>Information om uppdrag, utbildning och samverkan</p>
+  <h1>Nitroxx's<span>skämt</span></h1>
+  <p class="subtitle">60 skämt · garanterat minst ett skratt</p>
+  <div class="counter-bar">
+    <span>60 skämt totalt</span>
+    <span>Mobil · Dator · PC · PlayStation</span>
+  </div>
 </header>
 
-<nav>
-<a href="#">Hem</a>
-<a href="#">Om</a>
-<a href="#">Utbildning</a>
-<a href="#">Samverkan</a>
-<a href="#">Kontakt</a>
-</nav>
-
-<section class="hero">
-<h2>Profession • Beredskap • Samarbete</h2>
-</section>
-
-<div class="container">
-
-<div class="card">
-<h3>Om verksamheten</h3>
-<p>
-Den förstärkta regionala insatsstyrkan arbetar med att stödja polisens
-arbete vid särskilt krävande och riskfyllda händelser. Verksamheten bygger
-på hög kompetens, kontinuerlig utbildning och nära samverkan med andra
-myndigheter.
-</p>
-</div>
-
-<div class="card">
-<h3>Utbildning</h3>
-<p>
-Personal genomgår återkommande utbildningar inom taktik,
-sjukvård, fysisk förmåga, ledarskap och samverkan.
-</p>
-</div>
-
-<div class="card">
-<h3>Samverkan</h3>
-<p>
-Insatsstyrkan samarbetar med polisregioner och andra samhällsaktörer
-för att skapa en trygg och säker miljö.
-</p>
-</div>
-
-</div>
+<main>
+  <div class="grid" id="jokeGrid"></div>
+</main>
 
 <footer>
-© 2026 Informationssida – Förstärkta Regionala Insatsstyrkan
+  <div class="foot-title">Nitroxx's skämt</div>
+  <p>Gjord för att läsas på vilken skärm som helst.</p>
+  <div class="platforms">Optimerad för mobil, dator, PC och PlayStation</div>
+  <div class="version-tag">html 4.01</div>
 </footer>
+
+<script type="text/javascript">
+  const jokes = [
+    ["Varför kan spöken inte ljuga?", "För man ser rakt igenom dem."],
+    ["Vad sa den ena väggen till den andra?", "Vi möts i hörnet."],
+    ["Varför grät datorn?", "Den hade tappat sin bit-partner."],
+    ["Vad heter en pirat som hoppar över bokstaven R?", "Pi-at."],
+    ["Varför tog skelettet inte med sig en kompis till festen?", "Han hade inget kött på benen att bjuda på."],
+    ["Vad sa bonden när han tappade bort sin traktor?", "Var är min traktor?"],
+    ["Varför kan man inte lita på trappor?", "De är alltid uppåt något."],
+    ["Vad ropar man när man hittar en kub i öknen?", "Det är en oas-is!"],
+    ["Varför tog matten med paraply?", "Det var molnigt med chans till division."],
+    ["Vad sa noll till åtta?", "Snygg bälte."],
+    ["Varför är det aldrig tyst i skogen?", "Träden pratar bakom ryggen på varandra, fast de har ingen rygg."],
+    ["Vad kallas en kall hund?", "Chili dog, fel håll."],
+    ["Varför kom cykeln inte upp för backen?", "Den var två-trött."],
+    ["Vad sa havet till stranden?", "Inget, det bara vinkade."],
+    ["Varför går aldrig en tomat ensam på fest?", "Den blir lätt krossad av grupptryck."],
+    ["Vad heter en älg som inte kan räkna?", "Ingen aning, men den vet inte."],
+    ["Varför ringde klockan polisen?", "Den blev rånad på tid."],
+    ["Vad sa pizzan när den blev klar?", "Nu är jag deg-redo."],
+    ["Varför har bin honung?", "De gillar inte smör på flygande mackor."],
+    ["Vad kallar man en ko utan ben?", "Köttfärs."],
+    ["Varför log glaset?", "Det hade just blivit halvfullt på skämt."],
+    ["Vad sa stjärnan till planeten?", "Du är inte i min liga, men jag lyser för dig."],
+    ["Varför är spindlar bra på internet?", "De har egna nät."],
+    ["Vad heter en padda som parkerar fel?", "Bötfäst groda."],
+    ["Varför sover aldrig måsar på stranden?", "De är rädda för sand-witcher."],
+    ["Vad sa kaffekoppen till tekoppen?", "Vi brygger ihop."],
+    ["Varför teg fisken under tentan?", "Den ville inte avslöja sina källor."],
+    ["Vad heter chefen för alla spöken?", "In-spöktör."],
+    ["Varför grät molnet?", "Det hade fått en dålig regn-recension."],
+    ["Vad sa den ena glassen till den andra?", "Du smälter mitt hjärta."],
+    ["Varför kunde inte cykeln stå själv?", "Den var helt slut, två-trött igen, men nu på riktigt."],
+    ["Vad heter en katt som jobbar på bank?", "Kontant-katt."],
+    ["Varför är pingviner dåliga på att ljuga?", "Man ser alltid att de svartmålar sanningen."],
+    ["Vad sa trädet på hösten?", "Jag tappar fattningen, lite i taget."],
+    ["Varför fick datorn ont i magen?", "Den åt en virus-burgare."],
+    ["Vad heter en get som gillar musik?", "Bock'n'roll."],
+    ["Varför sjöng räven falskt?", "Den hade en list i halsen."],
+    ["Vad sa bonden till sin potatis?", "Du gör mig mosig av glädje."],
+    ["Varför kunde inte skelettet gå på dans?", "Han hade inga rytm-muskler kvar."],
+    ["Vad heter en fisk utan ögon?", "Fsk."],
+    ["Vad sa snögubben till sin vän?", "Känner du att det blåser kallt mellan oss?"],
+    ["Varför har giraffer långa halsar?", "Deras fötter luktar illa och näsan vill bort."],
+    ["Vad heter en orm som jobbar på regeringen?", "En slingrig politiker, men det är ingen skillnad."],
+    ["Varför var grodan ledsen?", "Den satt fast i en groda-loop."],
+    ["Vad sa trafikljuset till bilen?", "Sluta stirra, jag byter när jag vill."],
+    ["Varför är böcker aldrig ensamma?", "De har alltid ett kapitel till varandra."],
+    ["Vad heter en räka som är chef?", "Räk-tor."],
+    ["Varför grät pennan?", "Den hade blivit av med sin poäng."],
+    ["Vad sa molnen när de slogs?", "Nu blir det åska."],
+    ["Varför är myror dåliga gäster?", "De går alltid i pikés direkt till maten."],
+    ["Vad heter en hund som är matematiker?", "Pythagoras retriever."],
+    ["Varför teg telefonen?", "Den hade dålig täckning över känslorna."],
+    ["Vad sa solen till jorden?", "Du snurrar mig runt."],
+    ["Varför ville inte tärningen leka?", "Den kände sig alltid kantstött."],
+    ["Vad heter en ko som spelar gitarr?", "Mood-musik, fast med mö."],
+    ["Varför är glödlampor smarta?", "De ser alltid ljuset i allt."],
+    ["Vad sa droppen till havet?", "Jag är en del av dig, fast mindre dramatisk."],
+    ["Varför kan inte spöken bli bra skådespelare?", "De kan bara spela genomskinliga roller."],
+    ["Vad heter en kanin som är polis?", "Hopp-spektör."],
+    ["Varför log tandborsten?", "Den hade precis gjort ett bra jobb, tand för tand."]
+  ];
+
+  const grid = document.getElementById('jokeGrid');
+
+  jokes.forEach((joke, i) => {
+    const card = document.createElement('div');
+    card.className = 'joke';
+    card.setAttribute('tabindex', '0');
+
+    const num = document.createElement('div');
+    num.className = 'joke-number';
+    num.textContent = '#' + (i + 1);
+
+    const setup = document.createElement('p');
+    setup.className = 'setup';
+    setup.textContent = joke[0];
+
+    const punch = document.createElement('p');
+    punch.className = 'punch';
+    punch.textContent = joke[1];
+
+    card.appendChild(num);
+    card.appendChild(setup);
+    card.appendChild(punch);
+    grid.appendChild(card);
+  });
+</script>
 
 </body>
 </html>
