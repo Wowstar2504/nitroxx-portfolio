@@ -9,11 +9,11 @@
     --bg-white:#ffffff;
     --bg-black:#0a0a0a;
     --ink:#111111;
-    --c1:#ff4d6d; /* rosa-röd */
-    --c2:#ffd93d; /* gul */
-    --c3:#4dd9c0; /* turkos */
-    --c4:#8c6dff; /* lila */
-    --c5:#54c0ff; /* blå */
+    --c1:#7a0d0d; /* mörk röd */
+    --c2:#0d1f4d; /* mörk blå */
+    --c3:#7a0d0d; /* mörk röd */
+    --c4:#0d1f4d; /* mörk blå */
+    --c5:#7a0d0d; /* mörk röd */
     --line:#1a1a1a;
   }
 
@@ -74,7 +74,7 @@
     font-size:1rem;
     color:#444;
     letter-spacing:2px;
-    text-transform:uppercase;
+    text-transform:lowercase;
   }
 
   .counter-bar{
@@ -151,10 +151,10 @@
 
   /* färgrotation för korten (blandade färger) */
   .joke:nth-child(5n+1) .joke-number{background:var(--c1);}
-  .joke:nth-child(5n+2) .joke-number{background:var(--c2); color:var(--bg-black);}
-  .joke:nth-child(5n+3) .joke-number{background:var(--c3); color:var(--bg-black);}
+  .joke:nth-child(5n+2) .joke-number{background:var(--c2);}
+  .joke:nth-child(5n+3) .joke-number{background:var(--c3);}
   .joke:nth-child(5n+4) .joke-number{background:var(--c4);}
-  .joke:nth-child(5n+0) .joke-number{background:var(--c5); color:var(--bg-black);}
+  .joke:nth-child(5n+0) .joke-number{background:var(--c5);}
 
   /* footer - helt svart, aldrig vit */
   footer{
@@ -178,7 +178,7 @@
     margin-top:14px;
     font-size:0.78rem;
     letter-spacing:1.5px;
-    text-transform:uppercase;
+    text-transform:lowercase;
     color:var(--bg-black);
     background:linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c5), var(--c4));
     padding:6px 16px;
@@ -216,7 +216,7 @@
 
 <header>
   <h1>Nitroxx's<span>skämt</span></h1>
-  <p class="subtitle">67 skämt · garanterat minst ett skratt</p>
+  <p class="subtitle">60 skämt · garanterat minst ett skratt</p>
   <div class="counter-bar">
     <span>Blev du dum efter att du har gått igenom alla dessa skämt</span>
   </div>
@@ -227,7 +227,8 @@
 </main>
 
 <footer>
-  <div class="foot-title">Nitrixx's skämt</div>
+  <div class="foot-title">Nitroxx Skämt</div>
+  <span class="version-tag">version 4.1</span>
 </footer>
 
 <script type="text/javascript">
